@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { Rating } from "@material-tailwind/react";
+import Navbar from "../Shared/Navbar";
+import Footer from "../Shared/Footer";
+import AdSlider from "../Shared/AdSlider";
 
 const OnePlus = () => {
     const [filtered, setFiltered] =useState([])
@@ -14,11 +16,12 @@ const OnePlus = () => {
     })
     return (
         <div>
-            
-            <div className=" max-w-7xl  mx-auto gap-20 space-y-8 lg:space-y-0  lg:grid grid-cols-2 ">
+            <Navbar></Navbar>
+            <AdSlider></AdSlider>
+            <div className=" max-w-7xl mb-10 mx-auto gap-20 space-y-4 lg:space-y-0  lg:grid grid-cols-2 ">
             {
                 filtered.map(phone => < div key={phone._id} className="">
-                    <div className="lg:w-[400px] ">
+                    <div className="lg:w-[400px] mx-auto">
                     <div  className="  bg-white border border-gray-200 rounded-lg shadow h-[700px] dark:bg-gray-800 dark:border-gray-700">
                         <div className="lg:max-w-lg  flex justify-center mx-auto">
                             <img className=" rounded-t-lg w-56" src={phone.photo} alt="product image" />
@@ -44,6 +47,7 @@ const OnePlus = () => {
                     </div>)
             }
             </div>
+            <Footer></Footer>
         </div>
     );
 };
