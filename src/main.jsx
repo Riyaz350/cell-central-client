@@ -19,6 +19,7 @@ import OnePlus from './Brands/OnePlus.jsx';
 import Oppo from './Brands/Oppo.jsx';
 import Samsung from './Brands/Samsung.jsx';
 import Xiaomi from './Brands/Xiaomi.jsx';
+import UpdatePhone from './Pages/UpdatePhone.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:':brand/updatePhone/:id',
+        element:<UpdatePhone></UpdatePhone>,
+        loader:({params})=> fetch(`http://localhost:5000/phones/${params.id}`)
       },
       {
         path:'/apple',

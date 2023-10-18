@@ -7,7 +7,7 @@ const AddProduct = () => {
         const form = e.target
 
         const name = form.name.value
-        const brand = (form.brand.value).toLowerCase()
+        const brand = form.brand.value
         const photo = form.photo.value
         const type = form.type.value
         const price = form.price.value
@@ -63,63 +63,6 @@ const AddProduct = () => {
                     </div>
             <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
-
-
-            {/* <form onSubmit={handleAddPhone} className="bg-gray-600 lg:p-10">
-                <h1 className="text-4xl font-semibold mb-4 text-white">Add New Phone</h1>
-
-
-                    <div className="flex flex-col gap-6">
-                    <div className="form-control ">
-                        <label className="input-group">
-                            <span>Name</span>
-                            <input name="name" type="text" placeholder="" className="input input-bordered" />
-                        </label>
-                    </div>
-
-
-                    <div className="form-control ">
-                        <label className="input-group">
-                            <span>Brand</span>
-                            <input name="brand" type="text" placeholder="" className="input input-bordered" />
-                        </label>
-                    </div>
-
-
-                    <div className="form-control ">
-                        <label className="input-group">
-                            <span>Type</span>
-                            <input name="type" type="text" placeholder="" className="input input-bordered" />
-                        </label>
-                    </div>
-                    </div>
-
-
-                    <div className="form-control my-6">
-                        <label className="input-group">
-                            <input name="price" type="text" placeholder="Place Amount" className="input input-bordered" />
-                            <span>USD</span>
-                        </label>
-                    </div>
-
-
-                    <div>
-                    <textarea placeholder="Description" className="textarea textarea-bordered textarea-lg w-full max-w-lg" ></textarea>
-                    </div>
-
-
-                    <div className="form-control my-6">
-                        <label className="input-group">
-                            <span>Rating</span>
-                            <input name="rating" type="text" placeholder="Rate from 1-5" className="input input-bordered" />
-                        </label>
-                    </div>
-
-                    
-
-                    <input type="submit" className="btn   md:btn-md lg:btn-lg" value='Submit'/>
-                </form> */}
-
         </div>
     );
 };
