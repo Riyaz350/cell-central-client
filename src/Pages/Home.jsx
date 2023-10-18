@@ -1,37 +1,11 @@
-import { useState } from "react";
-import {   Link, useLoaderData} from "react-router-dom";
+import {   Link} from "react-router-dom";
 
 const Home = () => {
-    const loadPhones = useLoaderData()
-    
-
-    const [filteredPhones, setFilteredPhones] = useState([])
-
-    
-    
-    const searchByBrand = brand =>{
-
-        // navigate("/filteredPhones")
-        // <FilteredPhones brand={brand}></FilteredPhones>
-        // <Navigate to="/filteredPhones"></Navigate> 
-
-        {
-
-            const filtered = loadPhones.filter(phone => (phone.brand).toLowerCase() === brand)
-            setFilteredPhones(filtered)
-            console.log(brand,filteredPhones)
-        }
-    }
     return (
         <div>
-
-
-
-
-
             {/* 6 brands */}
             <div className="lg:grid grid-cols-3 max-w-7xl  gap-10 my-10 mx-auto">
-                <Link >
+                <Link to='/nokia'>
                 <div className="card w-full lg:w-96 h-52 bg-base-100 shadow-xl mb-10 px-20">
                     <img src="https://i.ibb.co/JyyPvt9/image-removebg-preview-9.png" className="w-52 lg:w-fit mx-auto h-1/2 m-5 mb-0" alt="Nokia" />
                     <div className="card-body flex-row justify-center">
@@ -39,14 +13,14 @@ const Home = () => {
                     </div>
                     </div>
                 </Link>
-                <button onClick={()=>searchByBrand("samsung")}>
+                <Link to='/samsung'>
                 <div className="card w-full lg:w-96 h-52 bg-base-100 shadow-xl mb-10 px-20">
                     <img src="https://i.ibb.co/KKxWYF3/image-removebg-preview-10.png" className="w-52 lg:w-fit mx-auto h-1/2" alt="Nokia" />
                     <div className="card-body ">
                         <h2 className="card-title flex-row justify-center">Samsung</h2>
                     </div>
                     </div>
-                </button>
+                </Link>
                 <Link to='/apple'>
                 <div className="card w-full lg:w-96 h-52 bg-base-100 shadow-xl mb-10 px-20">
                     <img src="https://i.ibb.co/5MWVD1d/image-removebg-preview-11.png" className="w-52 lg:w-fit mx-auto h-1/2" alt="Nokia" />
@@ -55,30 +29,30 @@ const Home = () => {
                     </div>
                     </div>
                 </Link>
-                <button onClick={()=>searchByBrand("one plus")}>
+                <Link to='/onePlus'>
                 <div className="card w-full lg:w-96 h-52 bg-base-100 shadow-xl mb-10 px-20">
                     <img src="https://i.ibb.co/ZgYRw2V/image-removebg-preview-12.png" className="w-52 lg:w-fit mx-auto h-1/2" alt="Nokia" />
                     <div className="card-body ">
                         <h2 className="card-title flex-row justify-center">One Plus</h2>
                     </div>
                     </div>
-                </button>
-                <button onClick={()=>searchByBrand("oppo")}>
+                </Link>
+                <Link to='/oppo'>
                 <div className="card w-full lg:w-96 h-52 bg-base-100 shadow-xl mb-10 px-20">
                     <img src="https://i.ibb.co/r7XQqPF/image-removebg-preview-14.png" className="w-52 lg:w-fit mx-auto h-1/2" alt="Nokia" />
                     <div className="card-body ">
                         <h2 className="card-title flex-row justify-center">Oppo</h2>
                     </div>
                     </div>
-                </button>
-                <button onClick={()=>searchByBrand("xiaomi")}>
+                </Link>
+                <Link to='/xiaomi'>
                 <div className="card w-full lg:w-96 h-52 bg-base-100 shadow-xl mb-10 px-20">
                     <img src="https://i.ibb.co/MSLjvjK/image-removebg-preview-15.png" className="w-52 lg:w-fit mx-auto h-1/2" alt="Nokia" />
                     <div className="card-body ">
                         <h2 className="card-title flex-row justify-center">Xiaomi</h2>
                     </div>
                     </div>
-                </button>
+                </Link>
             </div>
 
 

@@ -52,27 +52,27 @@ const router = createBrowserRouter([
         loader:()=>fetch('http://localhost:5000/phones')
       },
       {
-        path:'/apple',
+        path:'/nokia',
         element:<Nokia></Nokia>,
         loader:()=>fetch('http://localhost:5000/phones')
       },
       {
-        path:'/apple',
+        path:'/onePlus',
         element:<OnePlus></OnePlus>,
         loader:()=>fetch('http://localhost:5000/phones')
       },
       {
-        path:'/apple',
+        path:'/oppo',
         element:<Oppo></Oppo>,
         loader:()=>fetch('http://localhost:5000/phones')
       },
       {
-        path:'/apple',
+        path:'/samsung',
         element:<Samsung></Samsung>,
         loader:()=>fetch('http://localhost:5000/phones')
       },
       {
-        path:'/apple',
+        path:'/xiaomi',
         element:<Xiaomi></Xiaomi>,
         loader:()=>fetch('http://localhost:5000/phones')
       }
