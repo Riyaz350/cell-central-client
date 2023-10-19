@@ -11,7 +11,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
   const {user, logOut} =useContext(AuthContext)
 
   // NavLink classes
-  const active = 'btn text-white font-bold bg-red-700 border-2 border-white rounded-2xl hover:bg-white hover:text-red-700 hover:border-red-700'
+  const active = 'btn text-white font-bold bg-red-700 border-2 border-white rounded-lg hover:bg-white hover:text-red-700 hover:border-red-700'
   const inActive = 'btn text-black border-2 rounded-lg hover:bg-red-700 hover:border-white hover:text-white'
 
  //LogOut button handler 

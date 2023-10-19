@@ -15,7 +15,7 @@ const Xiaomi = () => {
         setFiltered(filteredPhones)
         console.log(filteredPhones)
     })
-    if(filtered){
+   
         return (
             <div>
             <Navbar></Navbar>
@@ -28,16 +28,6 @@ const Xiaomi = () => {
             <Footer></Footer>
         </div>
         );
-    }else{
-        return(
-
-            <div className="card w-96 bg-base-100 shadow-xl">
-        <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-        </div>
-        </div>
-        )
-    }
    
 };
 
