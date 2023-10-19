@@ -37,9 +37,8 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
   // reused
   const navLinks = <>
       <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive} to="/">Home</NavLink>
-      <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive} to="/aboutUs">About Us</NavLink>
-      <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive} to="/servicesPage">Services</NavLink>
-      <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive} to="/contactUs">Customer Support</NavLink>
+      <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive} to="/addProduct">Add product</NavLink>
+      <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive} to="/myCart">My Cart</NavLink>
       </>
       
 

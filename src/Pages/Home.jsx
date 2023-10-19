@@ -1,8 +1,11 @@
 import {   Link} from "react-router-dom";
+import Navbar from "../Shared/Navbar";
+import Footer from "../Shared/Footer";
 
 const Home = () => {
     return (
         <div>
+            <Navbar></Navbar>
             {/* 6 brands */}
             <div className="lg:grid grid-cols-3 max-w-7xl  gap-10 my-10 mx-auto">
                 <Link to='/nokia'>
@@ -55,7 +58,7 @@ const Home = () => {
                 </Link>
             </div>
 
-
+        <Footer></Footer>
         </div>
     );
 };

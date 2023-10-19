@@ -24,7 +24,7 @@ const OnePlus = () => {
                     <div className="lg:w-[400px] mx-auto">
                     <div  className="  bg-white border border-gray-200 rounded-lg shadow h-[700px] dark:bg-gray-800 dark:border-gray-700">
                         <div className="lg:max-w-lg  flex justify-center mx-auto">
-                            <img className=" rounded-t-lg w-56" src={phone.photo} alt="product image" />
+                            <img className=" rounded-t-lg w-56 h-64" src={phone.photo} alt="product image" />
                         </div>
                         <div className=" flex  flex-col justify-between p-10 gap-6 ">
                             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"><span className="text-xl font-bold">Name:</span> {phone.name}</h5>

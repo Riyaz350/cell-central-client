@@ -6,6 +6,7 @@ import { GoogleAuthProvider, updateProfile } from "firebase/auth";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import auth from "../../firebase.config";
 import Navbar from "../Shared/Navbar";
+import Footer from "../Shared/Footer";
 
 
 const Register = () => {
@@ -148,6 +149,7 @@ const Register = () => {
                 </div>
                 </div>
 
+        <Footer></Footer>
             </div>
     );
 };

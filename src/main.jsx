@@ -20,6 +20,7 @@ import Oppo from './Brands/Oppo.jsx';
 import Samsung from './Brands/Samsung.jsx';
 import Xiaomi from './Brands/Xiaomi.jsx';
 import UpdatePhone from './Pages/UpdatePhone.jsx';
+import MyCart from './Pages/MyCart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:'/filteredPhones',
         element:<FilteredPhones></FilteredPhones>
+      },
+      {
+        path:'/myCart',
+        element:<MyCart></MyCart>
       },
       {
         path:'/logIn',

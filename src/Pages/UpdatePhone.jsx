@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 const UpdatePhone = () => {
 
@@ -26,7 +27,10 @@ const UpdatePhone = () => {
             body:JSON.stringify(addPhone)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            swal("Success", "Data has been changed", "success");
+
+            console.log(data)})
     }
 
 

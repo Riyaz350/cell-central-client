@@ -1,3 +1,5 @@
+import Footer from "../Shared/Footer";
+import Navbar from "../Shared/Navbar";
 
 
 const AddProduct = () => {
@@ -32,9 +34,12 @@ const AddProduct = () => {
     }
 
     return (
-        <div className="p-10">
-            <form  onSubmit={handleAddPhone} >
-                    <div className="grid md:grid-cols-2 md:gap-6">
+        <div>
+            <Navbar></Navbar>
+            <div className="p-10 lg:px-20 lg:py-20 ">
+            <h1 className="text-3xl lg:text-5xl mb-10">Add a new product</h1>
+            <form  onSubmit={handleAddPhone} className="lg:space-y-10">
+                    <div className="grid md:grid-cols-2 md:gap-6 ">
                     <div className="relative z-0 w-full mb-6 group">
                         <input type="text" name="name"  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Name" required />
                     </div>
@@ -59,11 +64,14 @@ const AddProduct = () => {
                         
                     </div>
                     <div>
-                    <input name="description" placeholder="Description" className="textarea textarea-bordered textarea-lg w-full max-w-full my-6" ></input>
+                        <h3 className="text-sm text-gray-500">Description</h3>
+                        <input name="description" placeholder="Description" className="input input-bordered textarea-lg w-full h-full max-w-full my-6 " ></input>
                     </div>
-            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            <button type="submit" className="text-black hover:text-white bg-white hover:bg-red-700 border-2 border-black hover:border-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
         </div>
+            <Footer></Footer>
+        </div>                                                                                       
     );
 };
 

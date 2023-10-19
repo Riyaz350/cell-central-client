@@ -5,6 +5,7 @@ import swal from 'sweetalert';
 import { GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Navbar from "../Shared/Navbar";
+import Footer from "../Shared/Footer";
 
 
 
@@ -99,7 +100,7 @@ const LogIn = () => {
                     </div>
                 </div>
                 </div>
-
+            <Footer></Footer>
             </div>
 
     );
