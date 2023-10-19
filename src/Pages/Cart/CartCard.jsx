@@ -5,7 +5,6 @@ const CartCard = ({phone, setCart, cart}) => {
     const {_id, name, price, photo, brand, type} = phone;
 
     const handleDelete = _id =>{
-        console.log(_id)
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -30,7 +29,6 @@ const CartCard = ({phone, setCart, cart}) => {
         }
 
         else{
-            console.log(data)
             swal('ERROR','Failed to delete from the cart', 'error')}
         })
 

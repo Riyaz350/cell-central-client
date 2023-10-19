@@ -11,15 +11,11 @@ import Home from './Pages/Home.jsx';
 import LogIn from './Pages/LogIn.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import Register from './Pages/Register.jsx';
-import Apple from './Brands/Apple.jsx';
-import Nokia from './Brands/Nokia.jsx';
-import OnePlus from './Brands/OnePlus.jsx';
-import Oppo from './Brands/Oppo.jsx';
-import Samsung from './Brands/Samsung.jsx';
-import Xiaomi from './Brands/Xiaomi.jsx';
 import UpdatePhone from './Pages/UpdatePhone.jsx';
 import MyCart from './Pages/Cart/MyCart.jsx';
 import PhoneDetails from './Pages/PhoneDetails.jsx';
+import PrivateRoute from './Shared/PrivateRoute';
+import FilteredPhones from './Pages/FilteredPhones';
 
 const router = createBrowserRouter([
   {
@@ -33,12 +29,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/addProduct',
-        element:<AddProduct></AddProduct>
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       
       {
         path:'/myCart',
-        element:<MyCart></MyCart>,
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
         loader:()=>fetch('http://localhost:5000/cart')
       },
       {
@@ -50,45 +46,21 @@ const router = createBrowserRouter([
         element:<Register></Register>
       },
       {
-        path:':brand/updatePhone/:id',
+        path:'/updatePhone/:id',
         element:<UpdatePhone></UpdatePhone>,
-        loader:({params})=> fetch(`http://localhost:5000/phones/${params.id}`)
+        loader:({params})=> fetch(`http://localhost:5000/product/${params.id}`)
       },
       {
-        path:':brand/phoneDetails/:id',
+        path:'/phoneDetails/:id',
         element:<PhoneDetails></PhoneDetails>,
-        loader:({params})=> fetch(`http://localhost:5000/phones/${params.id}`)
+        loader:({params})=> fetch(`http://localhost:5000/product/${params.id}`)
       },
       {
-        path:'/apple',
-        element:<Apple></Apple>,
-        loader:()=>fetch('http://localhost:5000/phones')
-      },
-      {
-        path:'/nokia',
-        element:<Nokia></Nokia>,
-        loader:()=>fetch('http://localhost:5000/phones')
-      },
-      {
-        path:'/onePlus',
-        element:<OnePlus></OnePlus>,
-        loader:()=>fetch('http://localhost:5000/phones')
-      },
-      {
-        path:'/oppo',
-        element:<Oppo></Oppo>,
-        loader:()=>fetch('http://localhost:5000/phones')
-      },
-      {
-        path:'/samsung',
-        element:<Samsung></Samsung>,
-        loader:()=>fetch('http://localhost:5000/phones')
-      },
-      {
-        path:'/xiaomi',
-        element:<Xiaomi></Xiaomi>,
-        loader:()=>fetch('http://localhost:5000/phones')
+        path:'/filteredPhones/:brand',
+        element:<FilteredPhones></FilteredPhones>,
+        loader:({params})=>fetch(`http://localhost:5000/phones/${params.brand}`)
       }
+
     ]
   },
 ]);

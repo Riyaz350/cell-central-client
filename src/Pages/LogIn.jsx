@@ -14,7 +14,7 @@ const LogIn = () => {
 
     const navigate = useNavigate()
 
-    const { signInUser, signInPop} =useContext(AuthContext)
+    const {user, signInUser, signInPop} =useContext(AuthContext)
 
     const [email, setEmail] = useState("")
     const [password, setPassword] =useState("")
@@ -29,6 +29,7 @@ const LogIn = () => {
         signInUser(email, password)
         .then(()=>{            
             swal("Signed In","Successfully","success");
+            console.log(user)
             e.target.reset()
             navigate(location?.state? location.state :'/')
             })
