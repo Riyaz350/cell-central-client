@@ -7,7 +7,7 @@ import swal from "sweetalert";
 const PhoneDetails = () => {
 
     const phone = useLoaderData()
-    const {_id, brand, name, photo, price, type, description, rating } = phone
+    const { brand, name, photo, price, type, description, rating } = phone
 
     const addToCart = phone=>{
         fetch('http://localhost:5000/cart',{
@@ -24,11 +24,11 @@ const PhoneDetails = () => {
         })
     }
     return (
-        <div>
+        <div className="">
             <Navbar></Navbar>
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto lg:my-20">
               <div className="lg:w-[800px] mx-auto ">
-                    <div  className="lg:grid grid-cols-3  bg-white border border-gray-200 rounded-lg shadow h-[700px] dark:bg-gray-800 dark:border-gray-700">
+                    <div  className="lg:grid grid-cols-3  bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                         <div className="col-span-1 lg:max-w-lg pt-10 flex justify-center mx-auto">
                             <img className=" rounded-t-lg w-56 h-64" src={photo} alt="product image" />
                         </div>

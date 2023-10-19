@@ -1,10 +1,41 @@
 import swal from "sweetalert";
+import Swal from "sweetalert2";
 
-const CartCard = ({phone}) => {
-    const {_id,name, price, photo, brand, type} = phone;
+const CartCard = ({phone, setCart, cart}) => {
+    const {_id, name, price, photo, brand, type} = phone;
 
     const handleDelete = _id =>{
-        swal('Deleted','The product has been deleted from the cart', 'success')
+        console.log(_id)
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+        fetch(`http://localhost:5000/cart/${_id}`,{
+            method:"DELETE"
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.deletedCount>0)
+            { 
+                swal('Deleted','The product has been deleted from the cart', 'success')
+                const filtered = cart.filter(phones => phones._id !== _id)
+                // console.log(data, filtered)
+                setCart(filtered)
+        }
+
+        else{
+            console.log(data)
+            swal('ERROR','Failed to delete from the cart', 'error')}
+        })
+
+    }})
+
     }
     return (
         <div className="">
