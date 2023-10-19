@@ -64,8 +64,7 @@ const AddProduct = () => {
                         
                     </div>
                     <div>
-                        <h3 className="text-sm text-gray-500">Description</h3>
-                        <input name="description" placeholder="Description" className="input input-bordered textarea-lg w-full h-full max-w-full my-6 " ></input>
+                    <textarea name="description" placeholder="Description"  className="textarea textarea-bordered textarea-lg w-full " ></textarea>
                     </div>
             <button type="submit" className="text-black hover:text-white bg-white hover:bg-red-700 border-2 border-black hover:border-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>

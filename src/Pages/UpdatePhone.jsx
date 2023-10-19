@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
+import Navbar from "../Shared/Navbar";
+import Footer from "../Shared/Footer";
 
 const UpdatePhone = () => {
 
@@ -35,37 +37,52 @@ const UpdatePhone = () => {
 
 
     return (
-        <div className="p-10">
-            <form onSubmit={handleForm} >
-                    <div className="grid md:grid-cols-2 md:gap-6">
+        <div>
+            <Navbar></Navbar>
+            <div className="p-10 lg:px-20 lg:py-20 ">
+            <form onSubmit={handleForm} className="space-y-10">
+            <h1 className="text-3xl lg:text-5xl mb-10 ">Update {name}</h1>
+                    <div className="space-y-10">
+                    <div className="grid md:grid-cols-2 md:gap-6 ">
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="name" defaultValue={name}  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Name"   />
+                        <h3 className="text-xl text-gray-800 mb-4">Name</h3>
+                        <input type="text" name="name" defaultValue={name}  className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Name"   />
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="brand" defaultValue={brand}  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Brand"   />
+                        <h3 className="text-xl text-gray-800 mb-4">Brand</h3>
+                        <input type="text" name="brand" defaultValue={brand}  className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Brand"   />
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="photo" defaultValue={photo} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Photo URL"   />
+                        <h3 className="text-xl text-gray-800 mb-4">Photo URL</h3>
+                        <input type="text" name="photo" defaultValue={photo} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Photo URL"   />
                     </div>
                     
                         <div className="relative z-0 w-full mb-6 group">
-                            <input type="text" name="type" defaultValue={type} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Type"   />
+                            <h3 className="text-xl text-gray-800 mb-4">Type</h3>
+                            <input type="text" name="type" defaultValue={type} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Type"   />
                         </div>
                         <div className="relative z-0 w-full mb-6 group">
-                            <input type="text" name="price" defaultValue={price} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Price"   />
+                            <h3 className="text-xl text-gray-800 mb-4">Price</h3>
+                            <input type="text" name="price" defaultValue={price} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Price"   />
                         </div>
                    
                     
                         <div className="relative z-0 w-full mb-6 group">
-                            <input type="text" name="rating" defaultValue={rating} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Rate from 1-5"   />
+                            <h3 className="text-xl text-gray-800 mb-4">Rating</h3>
+                            <input type="text" name="rating" defaultValue={rating} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Rate from 1-5"   />
                         </div>
                         
                     </div>
                     <div>
-                    <input name="description" placeholder="Description" defaultValue={description} className="textarea textarea-bordered textarea-lg w-full max-w-full my-6" ></input>
+                    <h3 className="text-xl text-gray-800">Description</h3>
+
+                    <textarea name="description" placeholder="Description" defaultValue={description} className="textarea textarea-bordered textarea-lg w-full " ></textarea>
                     </div>
-            <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-            </form>
+            <button type="submit" className="text-black hover:text-white bg-white hover:bg-red-700 border-2 border-black hover:border-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            </div></form>
+        </div>
+
+        <Footer></Footer>
         </div>
     );
 };

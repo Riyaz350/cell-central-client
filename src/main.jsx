@@ -21,6 +21,7 @@ import Samsung from './Brands/Samsung.jsx';
 import Xiaomi from './Brands/Xiaomi.jsx';
 import UpdatePhone from './Pages/UpdatePhone.jsx';
 import MyCart from './Pages/MyCart.jsx';
+import PhoneDetails from './Pages/PhoneDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/myCart',
-        element:<MyCart></MyCart>
+        element:<MyCart></MyCart>,
+        loader:()=>fetch('http://localhost:5000/cart')
       },
       {
         path:'/logIn',
@@ -55,6 +57,11 @@ const router = createBrowserRouter([
       {
         path:':brand/updatePhone/:id',
         element:<UpdatePhone></UpdatePhone>,
+        loader:({params})=> fetch(`http://localhost:5000/phones/${params.id}`)
+      },
+      {
+        path:':brand/phoneDetails/:id',
+        element:<PhoneDetails></PhoneDetails>,
         loader:({params})=> fetch(`http://localhost:5000/phones/${params.id}`)
       },
       {
