@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:5000/phones')
+        loader:()=>fetch('https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/phones')
       },
       {
         path:'/addProduct',
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path:'/myCart',
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/cart')
+        loader:()=>fetch('https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/cart')
       },
       {
         path:'/logIn',
@@ -48,17 +48,17 @@ const router = createBrowserRouter([
       {
         path:'/updatePhone/:id',
         element:<UpdatePhone></UpdatePhone>,
-        loader:({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+        loader:({params})=> fetch(`https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/product/${params.id}`)
       },
       {
         path:'/phoneDetails/:id',
         element:<PhoneDetails></PhoneDetails>,
-        loader:({params})=> fetch(`http://localhost:5000/product/${params.id}`)
+        loader:({params})=> fetch(`https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/product/${params.id}`)
       },
       {
         path:'/filteredPhones/:brand',
         element:<FilteredPhones></FilteredPhones>,
-        loader:({params})=>fetch(`http://localhost:5000/phones/${params.brand}`)
+        loader:({params})=>fetch(`https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/phones/${params.brand}`)
       }
 
     ]

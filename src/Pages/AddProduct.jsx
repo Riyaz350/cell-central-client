@@ -9,7 +9,7 @@ const AddProduct = () => {
         const form = e.target
 
         const name = form.name.value
-        const brand = form.brand.value
+        const brand = (form.brand.value).toLowerCase()
         const photo = form.photo.value
         const type = form.type.value
         const price = form.price.value
@@ -19,7 +19,7 @@ const AddProduct = () => {
         form.reset()
         console.log(addPhone)
 
-        fetch('http://localhost:5000/phones',{
+        fetch('https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/phones',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'

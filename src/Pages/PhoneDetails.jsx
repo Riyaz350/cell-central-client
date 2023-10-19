@@ -10,7 +10,7 @@ const PhoneDetails = () => {
     const { brand, name, photo, price, type, description, rating } = phone
 
     const addToCart = phone=>{
-        fetch('http://localhost:5000/cart',{
+        fetch('https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/cart',{
             method:"POST",
             headers:{
                 'content-type':'application/json'
@@ -34,7 +34,7 @@ const PhoneDetails = () => {
                         </div>
                         <div className="col-span-2 flex  flex-col justify-start   p-10 gap-6 ">
                             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"><span className="text-xl font-bold">Name:</span> {name}</h5>
-                            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"><span className="text-xl font-bold">Brand:</span> {brand}</h5>
+                            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"><span className="text-xl font-bold">Brand:</span> {(brand).toUpperCase()}</h5>
 
                             <div className="flex items-start gap-6 flex-col">
                                 <p><span className="text-xl font-bold">Type of product:</span> {type}</p>

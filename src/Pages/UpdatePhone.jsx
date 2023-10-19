@@ -13,7 +13,7 @@ const UpdatePhone = () => {
         const form = e.target
 
         const name = form.name.value
-        const brand = form.brand.value
+        const brand = (form.brand.value).toLowerCase()
         const photo = form.photo.value
         const type = form.type.value
         const price = form.price.value
@@ -21,7 +21,7 @@ const UpdatePhone = () => {
         const description = form.description.value
         const addPhone = {name, brand, photo, type, price, rating, description}
         
-        fetch(`http://localhost:5000/phones/${_id}`,{
+        fetch(`https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/phones/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
