@@ -49,12 +49,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/updatePhone/:id',
-        element:<UpdatePhone></UpdatePhone>,
+        element:<PrivateRoute><UpdatePhone></UpdatePhone></PrivateRoute>,
         loader:({params})=> fetch(`https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/product/${params.id}`)
       },
       {
         path:'/phoneDetails/:id',
-        element:<PhoneDetails></PhoneDetails>,
+        element:<PrivateRoute><PhoneDetails></PhoneDetails></PrivateRoute>,
         loader:({params})=> fetch(`https://cell-central-server-ami9pzegc-riyaz-ahmeds-projects.vercel.app/product/${params.id}`)
       },
       {

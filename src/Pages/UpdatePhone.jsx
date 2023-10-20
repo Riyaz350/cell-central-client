@@ -2,8 +2,12 @@ import { useLoaderData } from "react-router-dom";
 import swal from "sweetalert";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const UpdatePhone = () => {
+
+    const {theme} =useContext(AuthContext)
 
     const loadedPhone = useLoaderData()
     const {_id, name, photo, brand, type, price, rating, description} = loadedPhone;
@@ -37,7 +41,7 @@ const UpdatePhone = () => {
 
 
     return (
-        <div>
+        <div className={` ${theme? "dark-home" : "light-home"}`}>
             <Navbar></Navbar>
             <div className="p-10 lg:px-20 lg:py-20 ">
             <form onSubmit={handleForm} className="space-y-10">
@@ -45,36 +49,36 @@ const UpdatePhone = () => {
                     <div className="space-y-10">
                     <div className="grid md:grid-cols-2 md:gap-6 ">
                     <div className="relative z-0 w-full mb-6 group">
-                        <h3 className="text-xl text-gray-800 mb-4">Name</h3>
-                        <input type="text" name="name" defaultValue={name}  className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Name"   />
+                        <h3 className={theme?"text-white text-xl  mb-4":"text-xl text-gray-800 mb-4"}>Name</h3>
+                        <input type="text" name="name" defaultValue={name}  className="block py-2.5  w-full text-sm  bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Name"   />
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <h3 className="text-xl text-gray-800 mb-4">Brand</h3>
-                        <input type="text" name="brand" defaultValue={brand}  className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Brand"   />
+                        <h3 className={theme?"text-white text-xl  mb-4":"text-xl text-gray-800 mb-4"}>Brand</h3>
+                        <input type="text" name="brand" defaultValue={brand}  className="block py-2.5  w-full text-sm  bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Brand"   />
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <h3 className="text-xl text-gray-800 mb-4">Photo URL</h3>
-                        <input type="text" name="photo" defaultValue={photo} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Photo URL"   />
+                        <h3 className={theme?"text-white text-xl  mb-4":"text-xl text-gray-800 mb-4"}>Photo URL</h3>
+                        <input type="text" name="photo" defaultValue={photo} className="block py-2.5  w-full text-sm  bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Photo URL"   />
                     </div>
                     
                         <div className="relative z-0 w-full mb-6 group">
-                            <h3 className="text-xl text-gray-800 mb-4">Type</h3>
-                            <input type="text" name="type" defaultValue={type} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Type"   />
+                            <h3 className={theme?"text-white text-xl  mb-4":"text-xl text-gray-800 mb-4"}>Type</h3>
+                            <input type="text" name="type" defaultValue={type} className="block py-2.5  w-full text-sm  bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Type"   />
                         </div>
                         <div className="relative z-0 w-full mb-6 group">
-                            <h3 className="text-xl text-gray-800 mb-4">Price</h3>
-                            <input type="text" name="price" defaultValue={price} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Price"   />
+                            <h3 className={theme?"text-white text-xl  mb-4":"text-xl text-gray-800 mb-4"}>Price</h3>
+                            <input type="text" name="price" defaultValue={price} className="block py-2.5  w-full text-sm bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Price"   />
                         </div>
                    
                     
                         <div className="relative z-0 w-full mb-6 group">
-                            <h3 className="text-xl text-gray-800 mb-4">Rating</h3>
-                            <input type="text" name="rating" defaultValue={rating} className="block py-2.5  w-full text-sm text-gray-900 bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Rate from 1-5"   />
+                            <h3 className={theme?"text-white text-xl  mb-4":"text-xl text-gray-800 mb-4"}>Rating</h3>
+                            <input type="text" name="rating" defaultValue={rating} className="block py-2.5  w-full text-sm bg-transparent border-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Rate from 1-5"   />
                         </div>
                         
                     </div>
                     <div>
-                    <h3 className="text-xl text-gray-800">Description</h3>
+                    <h3 className={theme?"text-xl text-gray-800 text-white": "text-xl text-gray-800"}>Description</h3>
 
                     <textarea name="description" placeholder="Description" defaultValue={description} className="textarea textarea-bordered textarea-lg w-full " ></textarea>
                     </div>
