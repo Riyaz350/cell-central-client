@@ -14,7 +14,7 @@ const LogIn = () => {
 
     const navigate = useNavigate()
 
-    const {user, signInUser, signInPop} =useContext(AuthContext)
+    const {theme, user, signInUser, signInPop} =useContext(AuthContext)
 
     const [email, setEmail] = useState("")
     const [password, setPassword] =useState("")
@@ -56,32 +56,32 @@ const LogIn = () => {
     // Firebase: Error (auth/invalid-login-credentials).
     return (
         
-        <div  className=" bg-[url('https://i.ibb.co/6s1VRm3/image.png')] bg-cover bg-no-repeat ">
+        <div  className={` ${theme? "dark-home" : "light-home"}`}>
         <Navbar></Navbar>
 
             <div data-aos='fade-up' className="py-20 lg:p-20">
-                <div className="  max-w-xl rounded-3xl mx-auto my-20 py-10 px-5 lg:p-20 bg-black">
+                <div className={` ${theme? "bg-black  max-w-xl rounded-3xl mx-auto my-20 py-10 px-5 lg:p-20 border-2 border-white" : "text-black light-home max-w-xl rounded-3xl mx-auto my-20 py-10 px-5 lg:p-20 border-2 border-black"}`}>
                     <div className="text-center ">
-                    <h1 className="text-3xl mb-5 lg:text-5xl font-bold text-white mb-2">Sign in </h1>
+                    <h1 className="text-3xl mb-10 lg:text-5xl font-bold ">Sign in </h1>
                     </div>
-                    <div className="bg-white  p-10 rounded-xl">
-                    <form onSubmit={handleSignIn} className="">
+                    <div className={theme?"bg-black p-10 rounded-xl":"bg-white p-10 rounded-xl"}>
+                    <form onSubmit={handleSignIn} className={theme?"bg-black ":"bg-white"}>
                         <div className="form-control">
                         <label className="label">
-                            <span className="label-text text-black">Email</span>
+                            <span className={theme?"label-text text-white":" label-text text-black"}>Email</span>
                         </label>
                         <input onChange={e=> setEmail(e.target.value)} type="email"  placeholder="email" className="input input-bordered border-[#0d3454] text-[#0d3454]" required />
                         </div>
                         <div className="form-control">
                         <label className="label">
-                            <span className="label-text text-[#0d3454] ">Password</span>
+                            <span className={theme?"label-text  text-white":"text-black"}>Password</span>
                         </label>
                         <input onChange={e=> setPassword(e.target.value)} type="password" placeholder="password" className="input input-bordered border-[#0d3454]" required />
                         <div>
                         </div>
 
                         <label className="label">
-                            <a href="#" className="label-text-alt text-base text-[#0d3454] link link-hover">Forgot password?</a>
+                            <a href="#" className= {theme?"label-text  text-white label-text-alt text-base link link-hover":"text-black label-text-alt text-base link link-hover"}>Forgot password?</a>
                         </label>
                         </div>
                         <div className="form-control mt-4">

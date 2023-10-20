@@ -23,7 +23,7 @@ const Register = () => {
 
 
 
-    const { createUser, signInPop, logOut} = useContext(AuthContext)
+    const {theme, createUser, signInPop, logOut} = useContext(AuthContext)
     
 
  
@@ -79,17 +79,17 @@ const Register = () => {
     }
 
     return (
-        <div className=" bg-[url('https://i.ibb.co/6s1VRm3/image.png')] bg-cover bg-no-repeat ">
+        <div className="">
             
         <Navbar></Navbar>
     
-            <div data-aos='fade-up' className="py-20 lg:p-20">
-                <div className="  max-w-xl rounded-3xl mx-auto my-20 py-10 px-5 lg:p-20 bg-black">
+            <div data-aos='fade-up' className={theme?"bg-black py-20 lg:p-20":"bg-white py-20 lg:p-20"}>
+                <div className={theme? "  max-w-xl rounded-3xl mx-auto my-20 py-10 px-5 lg:p-20 bg-black border-2 border-white":" max-w-xl rounded-3xl mx-auto my-20 py-10 px-5 lg:p-20 bg-white border-2 border-black"}>
                     <div className="text-center ">
-                    <h1 className="text-3xl lg:text-5xl font-bold text-white mb-8">Sign Up For Free</h1>
+                    <h1 className={theme?"text-3xl lg:text-5xl font-bold text-white mb-8":"text-3xl lg:text-5xl font-bold text-black mb-8"}>Sign Up For Free</h1>
                     </div>
                     <div className="bg-white  p-10 rounded-xl">
-                    <form onSubmit={handleEmailRegister} className="">
+                    <form onSubmit={handleEmailRegister} className=" ">
 
 
 

@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import swal from 'sweetalert';
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { IconButton } from "@material-tailwind/react";
-import {BsLightbulbFill } from 'react-icons/bs';
+import {BsLightbulbFill, BsLightbulbOff } from 'react-icons/bs';
 
 
 
@@ -95,8 +95,8 @@ import {BsLightbulbFill } from 'react-icons/bs';
                     </div>
 
                     </div>
-                   {theme? <IconButton className="bg-white  text-black border-2 border-black" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>:
-                    <IconButton className="bg-black text-white border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>}
+                   {!theme? <IconButton className="bg-white  text-black border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>:
+                    <IconButton className="bg-black text-white border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbOff/></IconButton>}
                     {/* <button className="bg-white" ><input type="checkbox" className="toggle" checked /></button> */}
 
                     </div>
