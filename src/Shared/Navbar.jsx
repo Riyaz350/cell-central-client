@@ -2,17 +2,28 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import swal from 'sweetalert';
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { IconButton } from "@material-tailwind/react";
+import {BsLightbulbFill } from 'react-icons/bs';
+
 
 
   const Navbar = () => {
 
   const [photo, setPhoto] =useState('')
   const [userName, setUserName] =useState('')
-  const {user, logOut} =useContext(AuthContext)
+  const [light, setLight] =useState(true)
+  const {theme,dark, user, logOut} =useContext(AuthContext)
 
   // NavLink classes
   const active = 'btn text-white font-bold bg-red-700 border-2 border-white rounded-lg hover:bg-white hover:text-red-700 hover:border-red-700'
   const inActive = 'btn text-black border-2 rounded-lg hover:bg-red-700 hover:border-white hover:text-white'
+
+    const handleTheme = ()=>{
+      setLight(!light)
+      dark(light)
+
+    }
+
 
  //LogOut button handler 
   const handleLogOut = e =>{
@@ -63,17 +74,32 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
                 {navLinks}
               </ul>
             </div>
-            <div className="lg:navbar-end justify-center">
-              {!user ? <NavLink to="/login" className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive}>Log In</NavLink>:
+            <div className="lg:navbar-end justify-center ">
+              {!user ?<div>
+
+                <NavLink to="/login" className={  ({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive}>Log In</NavLink>
+
+                {theme? <IconButton className="bg-white ml-10 lg:ml-4 text-black border-2 border-black" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>:
+                    <IconButton className="bg-black ml-10 lg:ml-4 text-white border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>}
+                    
+
+              </div> :
                  
                   <div className="flex  lg:flex-row  justify-center lg:justify-end items-center gap-4  lg:w-full">
-                    <h1 className="text-white  ">{userName}</h1>
-                    <div className="flex  gap-6 justify-center">
-                    <img src={photo} alt="" className="w-[50px] rounded-full"/>
-                  <Link onClick={handleLogOut} className='btn text-black font-bold border-2 rounded-2xl hover:bg-red-700 hover:border-white hover:text-white'>Log out</Link>
+                    <div className="flex flex-row justify-center items-center gap-4">
+                      <h1 className="text-white  ">{userName}</h1>
+                      <div className="flex  gap-6 justify-center">
+                      <img src={photo} alt="" className="w-[50px] rounded-full"/>
+                      <Link onClick={handleLogOut} className='btn text-black font-bold border-2 rounded-2xl hover:bg-red-700 hover:border-white hover:text-white'>Log out</Link>
+                    
                     </div>
+
                     </div>
-                 
+                   {theme? <IconButton className="bg-white  text-black border-2 border-black" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>:
+                    <IconButton className="bg-black text-white border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>}
+                    {/* <button className="bg-white" ><input type="checkbox" className="toggle" checked /></button> */}
+
+                    </div>
                   }
           </div>
         </div>

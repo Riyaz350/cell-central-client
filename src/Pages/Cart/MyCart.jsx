@@ -2,14 +2,16 @@ import {  useLoaderData } from "react-router-dom";
 import Footer from "../../Shared/Footer";
 import Navbar from "../../Shared/Navbar";
 import CartCard from "./CartCard";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const MyCart = () => {
+  const {theme} =useContext(AuthContext)
     const loadedCart = useLoaderData()
     const [cart, setCart] = useState(loadedCart)
     if(cart.length !== 0){
       return (
-        <div className="flex flex-col justify-between">
+        <div className={theme? "bg-black text-white flex flex-col justify-between":"bg-white text-black flex flex-col justify-between"}>
             <Navbar></Navbar>
             
             <div className="flex flex-col gap-5 my-32">
@@ -30,7 +32,7 @@ const MyCart = () => {
     }
     else{
       return(
-        <div> 
+        <div className={`${theme? "dark-home" : "light-home"}`}> 
           <Navbar></Navbar>
             <div className="flex flex-col justify-center items-center py-20">
               <h1 className="text-3xl lg:text-6xl">Sorry but your cart is empty... </h1>

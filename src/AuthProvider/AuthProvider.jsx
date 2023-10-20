@@ -6,7 +6,12 @@ export const AuthContext = createContext(null)
 const AuthProvider = ({children}) => {
     const [loading, setLoading] =useState(true)
     const [user, setUser] =useState(null)
-
+    const [theme, setTheme] = useState(false)
+    const dark = () =>{
+        setTheme(!theme)
+        console.log(theme)
+        return(theme)
+    }
 
     const createUser = ( email, password) =>{
         setLoading(true)
@@ -40,7 +45,7 @@ const AuthProvider = ({children}) => {
     },[])
 
 
-    const authInfo = {user,loading, createUser, signInUser,signInPop, logOut }
+    const authInfo = {theme,dark, user,loading, createUser, signInUser,signInPop, logOut }
 
 return(
 <AuthContext.Provider value={authInfo}>

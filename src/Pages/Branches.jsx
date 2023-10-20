@@ -5,16 +5,19 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const Branches = () => {
+    const {theme} =useContext(AuthContext)
     return (
        <div>
-        <h1 className="text-5xl font-bold text-center">Our Branches</h1>
+        <h1 className={` ${theme? "text-5xl font-bold text-center text-white" : "text-5xl font-bold text-center"}`}>Our Branches</h1>
         <div className="lg:flex gap-10 justify-center">
-            <Card className="mt-6 mx-auto lg:mx-0 w-96">
+            <Card className={theme? "mt-6 mx-auto lg:mx-0 w-96 bg-black text-white border-2 border-white": "mt-6 mx-auto lg:mx-0 w-96 bg-white text-black" }>
                 <CardBody className="space-y-2">
-                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                    <Typography variant="h5"className="mb-2">
                     Elephant Road
 
                     </Typography>
@@ -33,7 +36,7 @@ const Branches = () => {
                 </CardBody>
                 <CardFooter className="pt-0">
                     <a href="#" className="inline-block">
-                    <Button size="sm" variant="text" className="flex items-center gap-2">
+                    <Button size="sm"  className="flex items-center gap-2">
                         Learn More
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -53,10 +56,10 @@ const Branches = () => {
                     </a>
                 </CardFooter>
             </Card>
-            <Card className="mt-6 mx-auto lg:mx-0 w-96">
+            <Card className={theme? "mt-6 mx-auto lg:mx-0 w-96 bg-black text-white border-2 border-white": "mt-6 mx-auto lg:mx-0 w-96 bg-white text-black" }>
                 <CardBody className="space-y-2">
                     
-                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                    <Typography variant="h5"  className="mb-2">
                     Uttara Branch
                     </Typography>
                     <Typography>
@@ -73,7 +76,7 @@ const Branches = () => {
                 </CardBody>
                 <CardFooter className="pt-0">
                     <a href="#" className="inline-block">
-                    <Button size="sm" variant="text" className="flex items-center gap-2">
+                    <Button size="sm"  className="flex items-center gap-2">
                         Learn More
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -93,19 +96,27 @@ const Branches = () => {
                     </a>
                 </CardFooter>
             </Card>
-            <Card className="mt-6 mx-auto lg:mx-0 w-96">
+            <Card className={theme? "mt-6 mx-auto lg:mx-0 w-96 bg-black text-white border-2 border-white": "mt-6 mx-auto lg:mx-0 w-96 bg-white text-black" }>
                 <CardBody className="space-y-2">
                     
-                    <Typography variant="h5" color="blue-gray" className="mb-2">
+                    <Typography variant="h5"  className="mb-2">
                     Rampura Dhaka
                     </Typography>
                     <Typography>
                     Suite# 1311,1312, Level# 13 Computer City Center, New Elephant Road, Dhaka
                     </Typography>
+                    <Typography className="flex">
+                            <p className="font-bold">Phone: </p>
+                            <p> 017465646546</p>
+                    </Typography>
+                    <Typography className="flex">
+                            <p className="font-bold">Phone: </p>
+                            <p> 017465646546</p>
+                    </Typography>
                 </CardBody>
                 <CardFooter className="pt-0">
                     <a href="#" className="inline-block">
-                    <Button size="sm" variant="text" className="flex items-center gap-2">
+                    <Button size="sm"  className="flex items-center gap-2">
                         Learn More
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
