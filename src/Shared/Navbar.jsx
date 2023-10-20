@@ -47,7 +47,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
       
       
         <div className="lg:p-10 navbar bg-black lg:px-10 flex flex-col lg:flex-row justify-center items-center ">
-          <div className="lg:navbar-start flex flex-row-reverse py-10 lg:py-0 lg:flex-row justify-between">
+          <div className="lg:navbar-start flex flex-row py-10 lg:py-0 lg:flex-row justify-between">
               <div className="dropdown  overflow-visible">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" className=" h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

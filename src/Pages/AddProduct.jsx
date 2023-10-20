@@ -1,3 +1,4 @@
+import swal from "sweetalert";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 
@@ -28,6 +29,7 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data =>{
+            swal("Phone Added", "The phone has been added to the database", "success");
             console.log(data)
         })
 
@@ -66,7 +68,7 @@ const AddProduct = () => {
                     <div>
                     <textarea name="description" placeholder="Description"  className="textarea textarea-bordered textarea-lg w-full " ></textarea>
                     </div>
-            <button type="submit" className="text-black hover:text-white bg-white hover:bg-red-700 border-2 border-black hover:border-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            <button type="submit" className="text-black hover:text-white bg-white hover:bg-red-700 border-2 border-black hover:border-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Phone</button>
             </form>
         </div>
             <Footer></Footer>

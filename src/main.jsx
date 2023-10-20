@@ -16,11 +16,13 @@ import MyCart from './Pages/Cart/MyCart.jsx';
 import PhoneDetails from './Pages/PhoneDetails.jsx';
 import PrivateRoute from './Shared/PrivateRoute';
 import FilteredPhones from './Pages/FilteredPhones';
+import ErrorPage from './Pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
