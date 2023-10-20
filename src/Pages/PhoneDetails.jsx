@@ -2,6 +2,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
 import Footer from "../Shared/Footer";
 import swal from "sweetalert";
+import { Rating } from "@material-tailwind/react";
+
 
 
 const PhoneDetails = () => {
@@ -38,7 +40,7 @@ const PhoneDetails = () => {
 
                             <div className="flex items-start gap-6 flex-col">
                                 <p><span className="text-xl font-bold">Type of product:</span> {type}</p>
-                                <span className="bg-blue-100 text-blue-800 text-md font-semibold p-2 rounded dark:bg-blue-200 dark:text-blue-800">Rating: {rating}/5</span>
+                                <Rating value={parseInt(rating)} readonly />
                                 <p><span className="text-xl font-bold">Description: </span>{description}</p>
                             </div>
 

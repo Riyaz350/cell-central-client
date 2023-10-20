@@ -80,7 +80,7 @@ import {BsLightbulbFill, BsLightbulbOff } from 'react-icons/bs';
                 <NavLink to="/login" className={  ({ isActive, isPending }) =>isPending ? "pending" : isActive ? active : inActive}>Log In</NavLink>
 
                 {theme? <IconButton className="bg-white ml-10 lg:ml-4 text-black border-2 border-black" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>:
-                    <IconButton className="bg-black ml-10 lg:ml-4 text-white border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbFill/></IconButton>}
+                    <IconButton className="bg-black ml-10 lg:ml-4 text-white border-2 border-white" onClick={handleTheme} size="sm"><BsLightbulbOff/></IconButton>}
                     
 
               </div> :

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Rating } from "@material-tailwind/react";
+
 
 const BrandPhones = ({phone}) => {
     const {_id, name, photo, brand, type, rating, price} =phone
@@ -16,7 +18,8 @@ const BrandPhones = ({phone}) => {
     
                                 <div className="flex items-start gap-6 flex-col">
                                     <p><span className="text-xl font-bold">Type of product:</span> {type}</p>
-                                    <span className="bg-blue-100 text-blue-800 text-md font-semibold p-2 rounded dark:bg-blue-200 dark:text-blue-800">Rating: {rating}/5</span>
+                                    <Rating value={parseInt(rating)} readonly />
+                                    {/* <span className="bg-blue-100 text-blue-800 text-md font-semibold p-2 rounded dark:bg-blue-200 dark:text-blue-800">Rating: {rating}/5</span> */}
                                 </div>
     
                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">Price: <span className="text-[#3e9c35]">{price}</span> TK</span>
