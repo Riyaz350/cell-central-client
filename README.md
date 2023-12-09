@@ -1,8 +1,10 @@
-# React + Vite
+Cell-Central
 
 Live Link: https://65325b60d2a147049e15b060--beautiful-gaufre-1a1ee6.netlify.app
 
 Server side link: https://github.com/Riyaz350/cell-central-server
+
+Technologies used in this project: JavaScript, React, React Router, Tailwind, DaisyUI, Firebase, MongoDB 
 
 - Cell Central is a simple e-commerce website that sells smartphones of various brands.
 - There are phones of six different brands and in the brands secion of the home page you <br> will be able to see all the available brands.
