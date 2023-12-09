@@ -1,6 +1,9 @@
 # React + Vite
 
-Live Link: https://65325b60d2a147049e15b060--beautiful-gaufre-1a1ee6.netlify.app/
+Live Link: https://65325b60d2a147049e15b060--beautiful-gaufre-1a1ee6.netlify.app
+
+Server side link: https://github.com/Riyaz350/cell-central-server
+
 - Cell Central is a simple e-commerce website that sells smartphones of various brands.
 - There are phones of six different brands and in the brands secion of the home page you <br> will be able to see all the available brands.
 - Once you click on a certain brand you will see all the phones that we have of this perticuler brand.
